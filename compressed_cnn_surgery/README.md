@@ -4,7 +4,7 @@ This is a call for a simple research project on figuring out what is happening i
 
 It is well known that some large networks in computer vision (e.g. ResNet50) can be extremely compressed (like quantized to 4 bit precision or with 90% of weights zeroed out) and still be fine-tuned to have almost the same accuracy as the original network before compression. What is happening to the internal representation of the network subject to this kind of extreme compresson? Somebody has to figure out!
 
-## :memo: Where we I start?
+## :memo: Where do we start?
 
 ### Step 1: Prepare compressed models in PyTorch (compressed finetuned checkpoints already available):
 
