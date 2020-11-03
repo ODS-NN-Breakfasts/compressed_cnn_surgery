@@ -36,6 +36,18 @@ It is well known that some large neural networks in computer vision (e.g. ResNet
 
 We provide a starter traning script and a notebook for a ResNet18 model trained on CIFAR10 with INT8 compression. Activation maximization maps are visualized for the original and int8 compressed models in the **features_resnet18_cifar10_int8_vs_fp32** notebook via the *flashtorch* package. INT8 compression is done via the *nncf* package. Training of the uncompressed and compressed models on CIFAR10 can be reproduced with the **train_resnet18_cifar10** script. You can download the checkpoint files [here](https://drive.google.com/drive/folders/1IAkkKgYsNhpFxsh7J469-P6ivwyI-bRF?usp=sharing).
 
+To train the uncompressed model on CIFAR10 run (final top1 accuracy on test = 92.2%):
+
+```console
+python train_cifar.py --ckpt_filename "resnet18_cifar10.pth"
+```
+
+Train the int8 comressed model with the following command (final top1 accuracy on test = 92.15%):
+
+```console
+python train_cifar.py --enable_nncf_compression --starting_checkpoint "resnet18_cifar10.pth" --ckpt_filename "resnet18_cifar10_int8.pth" --epochs 15 --lr 0.005
+```
+
 ## What's next?
 
 ML engineers and data scientists from industrial companies will review your work and help you to formulate conclusions. You can include this work in your portfolio as scientific research of compressed deep neural networks.
